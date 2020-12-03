@@ -1,25 +1,26 @@
-const calculateTrees = (input) => {
-  var tree = '#'
-  var lines = input.split('\n')
-  var counter = 0
-  var end = lines[0].length
+const calculateTrees = (input, x, y) => {
+  var tree = "#";
+  var lines = input.split("\n");
+  var counter = 0;
+  var end = lines[0].length;
 
-  var down = 1
-  var across = 3
+  var down = y;
+  var across = x;
 
-  do {
-    var point = lines[down][across]
+  while (down < lines.length) {
+    var point = lines[down][across];
     if (point === tree) {
-      counter++
+      counter++;
     }
-    down++
-    if (across + 3 > end) {
-      across = (across + 3) - end
-    } else {
-      across += 3
+    down++;
+    across += x;
+    if (across >= end) {
+      across -= end;
     }
-  } while (down < lines.length)
-  return counter
-}
 
-module.exports = { calculateTrees }
+    console.log({ x: across, y: down, point: point });
+  }
+  return counter;
+};
+
+module.exports = { calculateTrees };
