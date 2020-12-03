@@ -18,9 +18,23 @@ const calculateTrees = (input, x, y) => {
       across -= end;
     }
 
-    console.log({ x: across, y: down, point: point });
+    // console.log({ x: across, y: down, point: point });
   }
   return counter;
 };
 
-module.exports = { calculateTrees };
+const minimizeSlopes = (input) => {
+  return [
+    [1, 1],
+    [3, 1],
+    [5, 1],
+    [7, 1],
+    [1, 2]
+  ]
+    .map((delta) => {
+      console.log({ x: delta[0], y: delta[1] });
+      return calculateTrees(input, delta[0], delta[1]);
+    })
+    .reduce((a, b) => a * b);
+};
+module.exports = { calculateTrees, minimizeSlopes };
