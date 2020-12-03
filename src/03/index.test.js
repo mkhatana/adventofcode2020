@@ -1,31 +1,30 @@
-import { calculateTrees } from "."
-import puzzleInput from "./input"
+import { calculateTrees } from ".";
+import puzzleInput from "./input";
 
-test('Encountered trees is 0', () => {
+test("Encountered trees is 0", () => {
   const simpleInput = `..##.......
-#...#...#..`
-  expect(calculateTrees(simpleInput)).toBe(0)
-})
+#...#...#..`;
+  expect(calculateTrees(simpleInput)).toBe(0);
+});
 
-test('Encountered trees is 1', () => {
-  const simpleInput =
-    `..##.......
+test("Encountered trees is 1", () => {
+  const simpleInput = `..##.......
 #...#...#..
 .#....#..#.
-..#.#...#.#`
-  expect(calculateTrees(simpleInput)).toBe(1)
-})
+..#.#...#.#`;
+  expect(calculateTrees(simpleInput)).toBe(1);
+});
 
-test('Encountered trees is 2', () => {
+test("Encountered trees is 2", () => {
   const simpleInput = `..##.......
 #...#...#..
 .#....#..#.
 ..#.#...#.#
-.#...##..#.`
-  expect(calculateTrees(simpleInput)).toBe(2)
-})
+.#...##..#.`;
+  expect(calculateTrees(simpleInput)).toBe(2);
+});
 
-test('Encountered trees is 7', () => {
+test("Encountered trees is 7", () => {
   const input = `..##.......
 #...#...#..
 .#....#..#.
@@ -36,10 +35,10 @@ test('Encountered trees is 7', () => {
 .#........#
 #.##...#...
 #...##....#
-.#..#...#.#`
-  expect(calculateTrees(input)).toBe(7)
-})
+.#..#...#.#`;
+  expect(calculateTrees(input)).toBe(7);
+});
 
-test('find solution for encountered trees', () => {
-  expect(calculateTrees(puzzleInput)).toBe(244)
-})
+test("find solution for encountered trees", () => {
+  expect(calculateTrees(puzzleInput)).toBe(254);
+});
