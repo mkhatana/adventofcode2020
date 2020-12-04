@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 var array = fs
-  .readFileSync("./day2input.txt", "utf8")
+  .readFileSync(__dirname + "/day2input.txt", "utf8")
   .trim()
   .split("\n");
 
