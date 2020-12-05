@@ -26,6 +26,10 @@ const findMissingSeat = (input) => {
     if (!(element + 1 === plusOne && element - 1 === minusOne)) {
       possibleSeats.push(element);
     }
+
+    if(possibleSeats.length > 2) {
+      break;
+    }
   }
 
   return possibleSeats.reduce((a, b) => (a + b) / 2);
