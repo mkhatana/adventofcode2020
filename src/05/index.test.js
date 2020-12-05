@@ -1,4 +1,4 @@
-import { decodeData, maxSeatId } from "./index";
+import { decodeData, maxSeatId, findMissingSeat } from "./index";
 import puzzle from "./puzzle";
 
 
@@ -42,3 +42,10 @@ describe("part 1", () => {
     expect(maxSeatId(input)).toBe(915);
   });
 });
+
+describe("part 2", () => {
+  test("find part 2 solution", () => {
+    const input = puzzle.split('\n');
+    expect(findMissingSeat(input)).toBe(699);
+  })
+})

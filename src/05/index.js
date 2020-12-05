@@ -25,4 +25,26 @@ export const decodeData = (input) => {
 }
 
 
-export const maxSeatId = (input) => Math.max(...(input.map(e => decodeData(e).seat)))
+const getAllSeats = (input) =>
+  input.map(e => decodeData(e).seat).sort((a, b) => b - a);
+
+export const maxSeatId = (input) => getAllSeats(input)[0]
+
+
+export const findMissingSeat = (input) => {
+  const seats = getAllSeats(input);
+
+  let possibleSeats = [];
+  for (let index = 1; index < seats.length - 1; index++) {
+    const element = seats[index];
+    const minusOne = seats[index + 1]; //sorted in descending order
+    const plusOne = seats[index - 1];
+
+    if (!(element + 1 === plusOne && element - 1 === minusOne)) {
+      possibleSeats.push(element);
+    }
+  }
+  
+  return possibleSeats.reduce((a, b) => (a + b) / 2);
+
+}
